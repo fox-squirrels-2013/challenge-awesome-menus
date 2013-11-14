@@ -11,10 +11,9 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new params[:menu]
     if @menu.save
-      redirect_to root_path
+      render :json => { :menu_template => render_to_string(:partial => 'menu', :locals => {:menu => @menu}) }
     else
-      @menus = Menu.all
-      render :index
+      render :json => {:error => @menu.errors.full_messages.join(", ")}, :status => :unprocessable_entity
     end
   end
 end
