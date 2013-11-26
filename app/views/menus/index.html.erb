@@ -5,7 +5,7 @@
   <ul class="menus list-group">
     <% @menus.each do |menu| %>
       <%= render 'menu', :menu => menu %>
-      <div id="menu-<%= menu.id %>"></div>
+      <div id="menu-<%= menu.id %>" class="partial-holder"></div>
     <% end %>
   </ul>
 </div>
