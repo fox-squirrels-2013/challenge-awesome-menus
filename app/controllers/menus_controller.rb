@@ -6,6 +6,8 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find params[:id]
+    @menu_item = MenuItem.new
+    @menu_items = @menu.menu_items
   end
 
   def create

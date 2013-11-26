@@ -1,0 +1,25 @@
+<%= menu.name %>
+<%= form_for menu_item, url: {action: "create"}, remote: true do |f| %>
+  <p>
+    <%= f.text_field :name, :placeholder => "item name" %>
+  </p>
+  <p>
+    <%= f.text_field :price, :placeholder => "price" %>
+  </p>
+  <p>
+    <%= f.submit "Add Item" %>
+  </p>
+<% end %>
+
+
+<% if menu_items %>
+  <table border="0">
+  <% menu_items.each do |menu_item| %>
+    <tr>
+    <td><%= menu_item.name %></td>
+    <td><%= menu_item.price %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+

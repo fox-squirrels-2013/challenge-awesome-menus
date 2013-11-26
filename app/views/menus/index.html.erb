@@ -1,11 +1,11 @@
-<div class="menu-list">
-
-  <ul class="menus list-group">
-    <% @menus.each do |menu| %>
-      <%= render 'menu', :menu => menu %>
-    <% end %>
-  </ul>
-</div>
 <%= link_to "New Menu", "#", :class => 'new-menu' %>
 
 <%= render 'form', :menu => @menu %>
+<div class="menu-list">
+  <ul class="menus list-group">
+    <% @menus.each do |menu| %>
+      <%= render 'menu', :menu => menu %>
+      <div id="menu-<%= menu.id %>"></div>
+    <% end %>
+  </ul>
+</div>

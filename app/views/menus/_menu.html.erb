@@ -1,1 +1,3 @@
-<li class="list-group-item"><%= link_to menu.name, menu %></li>
+<li class="list-group-item"><%= link_to menu.name, menu %>
+<%= link_to "Description", menu_menu_items_path(menu), :class => "description-link", remote: true %>
+</li>
